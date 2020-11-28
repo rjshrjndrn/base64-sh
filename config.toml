@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "http://base64.sh"
 languageCode = "en-us"
 theme = "terminal"
 paginate = 5
