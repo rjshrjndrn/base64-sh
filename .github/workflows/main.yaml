@@ -50,10 +50,6 @@ jobs:
         sed -i'' -e "s/CLUSTER_ID/`civo k3s show base64-sh -o custom -f ID`/" k8s.yaml &&
         sed -i'' -e "s/CLUSTER_ID/`civo k3s show base64-sh -o custom -f ID`/" config.toml
 
-    - uses: jakejarvis/hugo-build-action@master
-      with:
-        args: --minify --buildDrafts
-
     - name: Push to DockerHub
       uses: docker/build-push-action@v1
       with:
