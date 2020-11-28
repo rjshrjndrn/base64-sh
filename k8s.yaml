@@ -38,6 +38,7 @@ metadata:
   name: base64-sh-ingress
   annotations:
     kubernetes.io/ingress.class: "traefik"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   labels:
     app: base64-sh
 spec:
@@ -49,3 +50,7 @@ spec:
             backend:
               serviceName: base64-sh
               servicePort: 80
+  tls:
+  - hosts:
+    - base64.sh
+    secretName: base64-sh-ssl
