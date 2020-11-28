@@ -58,7 +58,7 @@ metadata:
   name: base64-sh-ingress
   annotations:
     ingress.kubernetes.io/custom-response-headers: Access-Control-Allow-Origin:*
-    ingress.kubernetes.io/force-ssl-redirect: "true"
+    ingress.kubernetes.io/ssl-redirect: "true"
     kubernetes.io/ingress.class: "traefik"
     cert-manager.io/cluster-issuer: letsencrypt-prod
   labels:
