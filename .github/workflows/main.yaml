@@ -1,0 +1,77 @@
+name: Deploy-Site
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install civo
+      uses: civo/action-civo@v1.0.0
+      with:
+        token: ${{ secrets.CIVO_TOKEN }}
+
+    - name: Make config folder
+      run: mkdir ~/.kube
+
+    - name: Save our cluster's authentication details
+      run: >
+        civo k3s config base64-sh --save
+        --local-path ~/.kube/config -y
+
+    - name: Ensure we can connect to the API
+      run: >
+        i=0;
+        while [ $i -le 120 ]; do
+          kubectl get nodes && break;
+          ((i++));
+          sleep 1;
+        done
+
+    - name: Authenticate our Kubernetes cluster to Docker Hub
+      run: >
+        if ! kubectl get secret regcred | grep "regcred"; then
+          kubectl create secret docker-registry regcred
+          --docker-email=${{secrets.DOCKER_EMAIL}}
+          --docker-server=docker.io
+          --docker-username=${{ secrets.DOCKER_USERNAME }}
+          --docker-password=${{ secrets.DOCKER_TOKEN }}
+        fi
+
+    - name: Replace our cluster ID
+      run: >
+        sed -i'' -e "s/CLUSTER_ID/`civo k3s show base64-sh -o custom -f ID`/" k8s.yaml &&
+        sed -i'' -e "s/CLUSTER_ID/`civo k3s show base64-sh -o custom -f ID`/" config.toml
+
+    - uses: jakejarvis/hugo-build-action@master
+      with:
+        args: --minify --buildDrafts
+
+    - name: Push to DockerHub
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_TOKEN }}
+        repository: rjshrjndrn/base64-sh
+        tags: latest
+
+    - name: Deploy our app to the cluster
+      run: kubectl apply -f k8s.yaml
+
+    - name: Wait for the deployment to be ready
+      run: >
+        i=0;
+        while [ $i -le 120 ]; do
+          kubectl rollout status deployment/my-site | grep "successfully rolled out" && break;
+          ((i++));
+          sleep 1;
+        done
+
+    - name: Update application
+      run: kubectl patch deployment base64-sh -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
+
