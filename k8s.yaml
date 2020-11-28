@@ -42,7 +42,7 @@ metadata:
     app: base64-sh
 spec:
   rules:
-    - host: base64-sh
+    - host: base64.sh
       http:
         paths:
           - path: /
