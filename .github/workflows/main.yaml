@@ -62,16 +62,7 @@ jobs:
         tags: latest
 
     - name: Deploy our app to the cluster
-      run: kubectl apply -f k8s.yaml
-
-    - name: Wait for the deployment to be ready
-      run: >
-        i=0;
-        while [ $i -le 120 ]; do
-          kubectl rollout status deployment/my-site | grep "successfully rolled out" && break;
-          ((i++));
-          sleep 1;
-        done
+      run: kubectl apply -f k8s.yaml --wait
 
     - name: Update application
       run: kubectl patch deployment base64-sh -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
