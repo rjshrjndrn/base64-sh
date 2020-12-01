@@ -24,7 +24,7 @@ Or change the name from "Bob's awsome app" to "Alice's awsome app". This task wi
 
     First let's create an nginx deployment, which will create nginx deployment and a service type LoadBalancer
 
-    *Note: if you don't have kubernetes cluster, use k3d to create one. Refer [here](here).*
+    *Note: if you don't have kubernetes cluster, use k3d to create one. Refer [here](https://base64.sh/kubernetes/local/creating-local-kubernetes-cluster/).*
 
     ```bash
     kubectl apply -f - << EOF
