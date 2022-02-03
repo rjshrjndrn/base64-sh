@@ -1,4 +1,4 @@
-baseurl = "https://base64.sh"
+baseurl = "https://blog.rjsh.ml"
 languageCode = "en-us"
 theme = "terminal"
 paginate = 5
