@@ -1,7 +1,7 @@
 +++
 title = "Blog about things I care."
 date = "2020-11-27T23:17:25+05:30"
-author = "Rajesh Rajendran <rjshrjndrn@gmail.com>"
+author = "Rajesh Rajendran <hey@rjsh.ml>"
 authorTwitter = "" #do not include @
 cover = ""
 tags = ["", ""]
