@@ -67,7 +67,34 @@ Or change the name from "Bob's awsome app" to "Alice's awsome app". This task wi
         app: hello-world
     EOF
     ```
-2. Deploy Hello-World application using helm.
+2. Download Helm 
+   
+   Linux
+   ```bash
+    sudo su
+    which helm &> /dev/null
+    if [[ $? -ne 0 ]]; then
+        echo "helm not installed. Installing it..."
+        curl -ssl https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz -o /tmp/helm.tar.gz
+        tar -xf /tmp/helm.tar.gz
+        chmod +x linux-amd64/helm
+        sudo cp linux-amd64/helm /usr/local/bin/helm
+        rm -rf linux-amd64/helm /tmp/helm.tar.gz
+    fi
+    exit
+   ```
+   
+   From Chocolatey (Windows)
+   ```
+   choco install kubernetes-helm
+   ```
+   
+   From Homebrew (macOS)
+   ```
+   brew install helm
+   ```
+   
+3. Deploy Hello-World application using helm.
 
     ```bash
     # Creating helm chart
@@ -84,7 +111,7 @@ Or change the name from "Bob's awsome app" to "Alice's awsome app". This task wi
     
     This is because when you did `helm create hello-world`, Helm created a template with some boilerplate code.
 
-3.  Structure of a helm chart.
+4.  Structure of a helm chart.
     ```
     ❯ tree hello-world
     hello-world
@@ -105,7 +132,7 @@ Or change the name from "Bob's awsome app" to "Alice's awsome app". This task wi
     3 directories, 10 files
     ```
     
-4.  Customizing Helm chart for our application needs
+5.  Customizing Helm chart for our application needs
     ```bash
     # Customizing the boilerplate
     vim values.yaml
@@ -119,7 +146,7 @@ Or change the name from "Bob's awsome app" to "Alice's awsome app". This task wi
       repository: rancher/hello-world
     ```
     *Note: use `:wq!` for save and quit from vim*
-5. Upgrading our application with helm.    
+6. Upgrading our application with helm.    
     ```bash
     helm upgrade my-hello-world --namespace default
     ```
