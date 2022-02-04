@@ -4,8 +4,6 @@ date: 2020-11-29T13:01:10+05:30
 draft: true
 ---
 
-## Create Kubernetes Cluster in a Minute
-
 Testing our applications or prototyping some new [operators](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) needs fresh cluster more often, which will be a daunting task, If you have created a kubernetes cluster in bare metal. But now, thanks to community, there are awesome products which can be used to create kubernetes clusters, let it be single node or multi node.
 2 of the major projects are
 1. k3d(docker implementation of k3s, a minimal kubernetes distribution by Rancher)
