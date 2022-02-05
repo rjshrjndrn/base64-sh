@@ -2,6 +2,7 @@
 title: "Helm Basics"
 date: 2020-11-28T09:07:55+05:30
 draft: true
+description: "Understanding the basics of helm"
 ---
 
 ## Helm, the package manager for Kubernetes.
