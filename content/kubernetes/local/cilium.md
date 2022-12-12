@@ -63,5 +63,5 @@ Download cilium cli from https://github.com/cilium/cilium-cli/releases
 
 ```bash
 cilium install
-cilium hubble enable
+cilium hubble enable --ui
 ```
