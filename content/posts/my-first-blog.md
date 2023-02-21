@@ -1,14 +1,14 @@
-+++
-title = "Blog about things I care."
-date = "2020-11-27T23:17:25+05:30"
-author = "Rajesh Rajendran <hey@rjsh.ml>"
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["", ""]
-keywords = ["", ""]
-description = ""
-showFullContent = false
-+++
+---
+title: "Blog about things I care."
+date: "2020-11-27T23:17:25+05:30"
+author: "Rajesh Rajendran <hey@rjsh.me>"
+authorTwitter: "" #do not include @
+cover: ""
+tags: ["", ""]
+keywords: ["", ""]
+description: ""
+showFullContent: false
+---
 
 ## This is my first blogging endeavour
 

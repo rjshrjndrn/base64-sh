@@ -46,7 +46,7 @@ paginate = 5
 [languages]
   [languages.en]
     languageName = "English"
-    title = "blog.rjsh.ml"
+    title = "blog.rjsh.me"
     subtitle = "Experiments with distributed systems"
     owner = ""
     keywords = ""
@@ -58,7 +58,7 @@ paginate = 5
     missingBackButtonLabel = "Back to home page"
 
     [languages.en.params.logo]
-      logoText = "blog.rjsh.ml"
+      logoText = "blog.rjsh.me"
       logoHomeLink = "/"
 
     [languages.en.menu]

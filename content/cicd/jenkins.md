@@ -8,8 +8,8 @@ Running Jenkins is trivial task, But configuring it.. Well that can be lil daunt
 
 ## Running Jenkins in Kubernetes
 
-1. Create a kubernetes cluster. If you want to use k3d, follow this [guide](https://blog.rjsh.ml/kubernetes/local/create-local-kubernetes-cluster/#code).
-2. Install Helm. Refer this [guide](https://blog.rjsh.ml/kubernetes/local/helm-basics/#code) Download Helm section.
+1. Create a kubernetes cluster. If you want to use k3d, follow this [guide](https://blog.rjsh.me/kubernetes/local/create-local-kubernetes-cluster/#code).
+2. Install Helm. Refer this [guide](https://blog.rjsh.me/kubernetes/local/helm-basics/#code) Download Helm section.
 3. Installing Jenkins in kubernetes 
    ```bash
    helm repo add jenkins https://charts.jenkins.io

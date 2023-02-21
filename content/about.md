@@ -11,4 +11,4 @@ Current focus is on kubernetes/microservices. Big time privacy freek, love minim
 
 My Github repo: https://github.com/rjshrjndrn
 
-Not so active in social media. You can reach me at <hey@rjsh.ml>
+Not so active in social media. You can reach me at <hey@rjsh.me>
