@@ -2,6 +2,7 @@
 title: "Jenkins in kubernetes"
 date: 2022-02-04T10:21:41+05:30
 draft: true
+description: "Run Jenkins in kubernetes"
 ---
 
 Running Jenkins is trivial task, But configuring it.. Well that can be lil daunting. But as every cloud project now evolved to.. Yay.. Kubernetes!!!

@@ -1,6 +1,7 @@
 ---
 title: "Install cilium in k3d"
 date: 2022-12-12T05:39:16+01:00
+description: "eBPF networking with cilium"
 draft: false
 ---
 

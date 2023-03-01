@@ -2,6 +2,7 @@
 title: "Yaml Magic"
 date: 2022-06-30T11:09:27+02:00
 draft: false
+description: "Do programming with YAML."
 ---
 
 Yaml has some neat features for keeping the code dry.

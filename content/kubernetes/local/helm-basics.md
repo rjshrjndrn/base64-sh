@@ -1,7 +1,7 @@
 ---
 title: "Helm Basics"
 date: 2020-11-28T09:07:55+05:30
-draft: true
+draft: false
 description: "Understanding the basics of helm"
 ---
 

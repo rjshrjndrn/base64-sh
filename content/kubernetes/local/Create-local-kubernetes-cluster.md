@@ -1,7 +1,8 @@
 ---
 title: "Create Local Kubernetes Cluster In a Minute"
 date: 2020-11-29T13:01:10+05:30
-draft: true
+draft: false
+description: "Create reproduceable local Kubernetes cluster with k3d"
 ---
 
 Testing our applications or prototyping some new [operators](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) needs fresh cluster more often, which will be a daunting task, If you have created a kubernetes cluster in bare metal. But now, thanks to community, there are awesome products which can be used to create kubernetes clusters, let it be single node or multi node.

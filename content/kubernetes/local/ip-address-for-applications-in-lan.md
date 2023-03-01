@@ -1,7 +1,8 @@
 ---
 title: "LAN wide accessible IP addresses for applications deployed in local Kubernetes cluster"
 date: 2020-11-27T23:28:39+05:30
-draft: true
+draft: false
+description: "Create Local LoadBalancers with LAN wide access in Kubernetes."
 ---
 
 ## Create an application in kubernetes cluster which is accessible from entire lan
