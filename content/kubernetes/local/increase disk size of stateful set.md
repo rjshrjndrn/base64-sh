@@ -18,13 +18,13 @@ export PVC=<pvc-name>
 export STS=<stateful-set-name>
 export NS=<namespace>
 # Get your storage class name
-kg pvc $PVC -n $NS -o jsonpath='{.spec.storageClassName}'
+SC=`kg pvc $PVC -n $NS -o jsonpath='{.spec.storageClassName}'`
 
 # if VolumeExpansion is supported, you'll get the value as true
-kubectl get -n $NS -o jsonpath='{.allowVolumeExpansion}' sc $STS
+kubectl get -n $NS -o jsonpath='{.allowVolumeExpansion}' sc $SC
 
 # If the above command gave false, enable volume expansion.
-kubectl patch -p '{"allowVolumeExpansion": true}' sc $STS
+kubectl patch -p '{"allowVolumeExpansion": true}' sc $SC
 ```
 
 2. Increase the storage size of pvc
