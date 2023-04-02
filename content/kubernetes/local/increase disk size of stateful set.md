@@ -48,6 +48,7 @@ kubectl patch pvc -p '{"spec": {"resources": {"requests": {"storage": "'$NEW_SIZ
 kubectl get sts -n $NS $STS -o yaml > sts.yaml
 
 # Edit the statefulset yaml(sts.yaml), and update the `storage: <NEW_SIZE>`
+sed -i "s/storage: .*/storage: ${NEW_SIZE}/g" sts.yaml
 
 # Delete the old statefulset
 kubectl delete sts -n $NS $STS --cascade=orphan
